@@ -10,7 +10,8 @@
 
 Mesmo não provendo nenhum valor, o Go garante inicializar todas as variáveis, conforme a imagem abaixo:  
 
-![Inicializações de variáveis](img/inicializacoes_aula01.png)  
+<!-- ![Inicializações de variáveis](img/inicializacoes_aula01.png) -->
+<img src="img/inicializacoes_aula01.png" alt="Inicializações de variáveis" width="350" height="200">  
 
 Título da tabela: Zero-initialization. Primeira linha da tabela: false para bool para. Segunda linha: 0 para int. Terceira linha: 0 para float. Quarta linha: "" para string. Quinta linha: {} para struct
 
