@@ -13,9 +13,7 @@ Mesmo não provendo nenhum valor, o Go garante inicializar todas as variáveis, 
 <!-- ![Inicializações de variáveis](img/inicializacoes_aula01.png) -->
 <img src="img/inicializacoes_aula01.png" alt="Inicializações de variáveis" width="350" height="200">  
 
-Título da tabela: Zero-initialization. Primeira linha da tabela: false para bool para. Segunda linha: 0 para int. Terceira linha: 0 para float. Quarta linha: "" para string. Quinta linha: {} para struct
-
-Porém, em muitas linguagens existe uma maneira de denotar um ponteiro nulo que, essencialmente, não aponta para nenhum lugar. Por exemplo: em C é NULL, em Python é None e em java é null. Em Go, temos o nil.
+Porém, em muitas linguagens existe uma maneira de denotar um ponteiro nulo que, essencialmente, não aponta para nenhum lugar. Por exemplo: em C é `NULL`, em Python é `None` e em java é `null`. Em Go, temos o `nil`.
 
 ####  Nil e Inferência  
 
