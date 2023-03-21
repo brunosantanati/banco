@@ -120,7 +120,7 @@ func main() {
 
 E nossa saída seria:
 
-<img src="img/output_aula02.png" alt="Inicializações de variáveis" width="350" height="150">  
+<img src="img/output_aula02.png" alt="Inicializações de variáveis" width="500" height="100">  
 
 [Neste link, você pode executar o código acima.](https://play.golang.org/p/Kq5ZXTXLVrW)
 
