@@ -11,6 +11,9 @@ func main() {
 
 	fmt.Println()
 	aula2()
+
+	fmt.Println()
+	aula3()
 }
 
 func aula1() {
@@ -116,5 +119,23 @@ func sacar() {
 
 	fmt.Println(contaDaSilvia.Sacar(400))
 	fmt.Println(contaDaSilvia.Saldo)
+}
 
+func aula3() {
+	fmt.Println("######### Aula 3 #########")
+
+	fmt.Println()
+	multiplosRetornos()
+}
+
+func multiplosRetornos() {
+	contaDaSilvia := contas.ContaCorrente{}
+	contaDaSilvia.Titular = "Silvia"
+	contaDaSilvia.Saldo = 500
+
+	fmt.Println(contaDaSilvia.Saldo)
+	status, valor := contaDaSilvia.Depositar(2000)
+	fmt.Println(status, valor)
+
+	fmt.Println(contaDaSilvia.Depositar(2000))
 }
