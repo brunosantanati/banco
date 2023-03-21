@@ -167,7 +167,7 @@ Note o uso das reticências na declaração do parâmetro número: `numeros .
 
 #### Passando um valor ou uma cópia  
 
-Métodos são definidos de maneira parecida com funções, mas de uma maneira diferente. Existe um (p *Pessoa) que se refere a um ponteiro para a instância criada da estrutura, conforme o exemplo abaixo:
+Métodos são definidos de maneira parecida com funções, mas de uma maneira diferente. Existe um `(p *Pessoa)` que se refere a um ponteiro para a instância criada da estrutura, conforme o exemplo abaixo:
 
 ```go
 package main
@@ -201,13 +201,13 @@ Guilherme Lima
 Program exited.
 ```
 
-Nesse caso, passamos para o método o valor encontrado neste ponteiro através do (p *Pessoa).
+Nesse caso, passamos para o método o valor encontrado neste ponteiro através do `(p *Pessoa)`.
 
 #### Passando uma cópia  
 
-Também é possível passar um valor removendo a assinatura do ponteiro `(p *Pessoa)` para (p Pessoa).
+Também é possível passar um valor removendo a assinatura do ponteiro `(p *Pessoa)` para `(p Pessoa)`.
 
-Nesse caso, uma cópia do valor de Pessoa é passada para a função, sem alterar o valor do ponteiro. Portanto, precisamos ficar atentos, já que qualquer alteração que você faça em p se passar por valor não será refletida na fonte p.
+Nesse caso, uma cópia do valor de Pessoa é passada para a função, sem alterar o valor do ponteiro. Portanto, precisamos ficar atentos, já que qualquer alteração que você faça em `p` se passar por valor não será refletida na fonte `p`.
 
 Observe este exemplo:
 
@@ -247,4 +247,4 @@ Guilherme Lima
 Program exited.
 ```
 
-Observe que alteramos o sobrenome de p no método ExibirNomeCompleto, mas não foi alterado o valor armazenado no ponteiro. Sendo assim, quando não precisamos alterar o conteúdo de um ponteiro, podemos passar apenas uma cópia.
+Observe que alteramos o sobrenome de `p` no método `ExibirNomeCompleto`, mas não foi alterado o valor armazenado no ponteiro. Sendo assim, quando não precisamos alterar o conteúdo de um ponteiro, podemos passar apenas uma cópia.
