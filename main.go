@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/brunosantanati/banco/clientes"
 	"github.com/brunosantanati/banco/contas"
 )
 
@@ -41,12 +42,14 @@ func usarStruct() {
 	//cria uma instância da struct ContaCorrente com valores default
 	fmt.Println(contas.ContaCorrente{})
 
+	clienteGuilherme := clientes.Titular{"Guilherme", "11111111111", "desenvolvedor"}
 	//cria uma instância passando nomes dos campos
-	contaDoGuilherme := contas.ContaCorrente{Titular: "Guilherme",
+	contaDoGuilherme := contas.ContaCorrente{Titular: clienteGuilherme,
 		NumeroAgencia: 589, NumeroConta: 123456, Saldo: 125.5}
 
+	clienteBruna := clientes.Titular{"Bruna", "22222222222", "desenvolvedora"}
 	//cria uma instância passando todos campos na ordem, então não precisa passar os nomes
-	contaDaBruna := contas.ContaCorrente{"Bruna", 222, 111222, 200}
+	contaDaBruna := contas.ContaCorrente{clienteBruna, 222, 111222, 200}
 
 	fmt.Println(contaDoGuilherme)
 	fmt.Println(contaDaBruna)
@@ -66,11 +69,13 @@ func aula2() {
 }
 
 func usarStructComPonteiro() {
+	clienteCris := clientes.Titular{"Cris", "33333333333", "desenvolvedora"}
+
 	//cria uma variável que é um ponteiro
 	var contaDaCris *contas.ContaCorrente
 	//cria uma instância do struct ContaCorrente e retorna um ponteiro para ela
 	contaDaCris = new(contas.ContaCorrente)
-	contaDaCris.Titular = "Cris"
+	contaDaCris.Titular = clienteCris
 	contaDaCris.Saldo = 500
 
 	fmt.Println(contaDaCris)
@@ -80,27 +85,30 @@ func usarStructComPonteiro() {
 
 func compararTipos() {
 	//comparação 1
-	contaDoGuilherme := contas.ContaCorrente{Titular: "Guilherme",
+	clienteGuilherme := clientes.Titular{"Guilherme", "11111111111", "desenvolvedor"}
+	contaDoGuilherme := contas.ContaCorrente{Titular: clienteGuilherme,
 		NumeroAgencia: 589, NumeroConta: 123456, Saldo: 125.5}
-	contaDoGuilherme2 := contas.ContaCorrente{Titular: "Guilherme",
+	contaDoGuilherme2 := contas.ContaCorrente{Titular: clienteGuilherme,
 		NumeroAgencia: 589, NumeroConta: 123456, Saldo: 125.5}
 	fmt.Println(contaDoGuilherme == contaDoGuilherme2)
 
 	//comparação 2
-	contaDaBruna := contas.ContaCorrente{"Bruna", 222, 111222, 200}
-	contaDaBruna2 := contas.ContaCorrente{"Bruna", 222, 111222, 200}
+	clienteBruna := clientes.Titular{"Bruna", "22222222222", "desenvolvedora"}
+	contaDaBruna := contas.ContaCorrente{clienteBruna, 222, 111222, 200}
+	contaDaBruna2 := contas.ContaCorrente{clienteBruna, 222, 111222, 200}
 	fmt.Println(contaDaBruna == contaDaBruna2)
 
 	//comparação 3
 	fmt.Println()
+	clienteCris := clientes.Titular{"Cris", "33333333333", "desenvolvedora"}
 	var contaDaCris *contas.ContaCorrente
 	contaDaCris = new(contas.ContaCorrente)
-	contaDaCris.Titular = "Cris"
+	contaDaCris.Titular = clienteCris
 	contaDaCris.Saldo = 500
 
 	var contaDaCris2 *contas.ContaCorrente
 	contaDaCris2 = new(contas.ContaCorrente)
-	contaDaCris2.Titular = "Cris"
+	contaDaCris2.Titular = clienteCris
 	contaDaCris2.Saldo = 500
 
 	fmt.Println(&contaDaCris, &contaDaCris2)
@@ -111,8 +119,9 @@ func compararTipos() {
 }
 
 func sacar() {
+	clienteSilvia := clientes.Titular{"Silvia", "44444444444", "desenvolvedora"}
 	contaDaSilvia := contas.ContaCorrente{}
-	contaDaSilvia.Titular = "Silvia"
+	contaDaSilvia.Titular = clienteSilvia
 	contaDaSilvia.Saldo = 500
 
 	fmt.Println(contaDaSilvia.Saldo)
@@ -132,8 +141,9 @@ func aula3() {
 }
 
 func multiplosRetornos() {
+	clienteSilvia := clientes.Titular{"Silvia", "44444444444", "desenvolvedora"}
 	contaDaSilvia := contas.ContaCorrente{}
-	contaDaSilvia.Titular = "Silvia"
+	contaDaSilvia.Titular = clienteSilvia
 	contaDaSilvia.Saldo = 500
 
 	fmt.Println(contaDaSilvia.Saldo)
@@ -144,8 +154,10 @@ func multiplosRetornos() {
 }
 
 func transferirEntreContas() {
-	contaDaSilvia := contas.ContaCorrente{Titular: "Silvia", Saldo: 300}
-	contaDoGustavo := contas.ContaCorrente{Titular: "Gustavo", Saldo: 100}
+	clienteSilvia := clientes.Titular{"Silvia", "44444444444", "desenvolvedora"}
+	clienteGustavo := clientes.Titular{"Gustavo", "55555555555", "desenvolvedor"}
+	contaDaSilvia := contas.ContaCorrente{Titular: clienteSilvia, Saldo: 300}
+	contaDoGustavo := contas.ContaCorrente{Titular: clienteGustavo, Saldo: 100}
 
 	status := contaDoGustavo.Tranferir(50, &contaDaSilvia)
 
