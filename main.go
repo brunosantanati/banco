@@ -126,6 +126,9 @@ func aula3() {
 
 	fmt.Println()
 	multiplosRetornos()
+
+	fmt.Println()
+	transferirEntreContas()
 }
 
 func multiplosRetornos() {
@@ -138,4 +141,15 @@ func multiplosRetornos() {
 	fmt.Println(status, valor)
 
 	fmt.Println(contaDaSilvia.Depositar(2000))
+}
+
+func transferirEntreContas() {
+	contaDaSilvia := contas.ContaCorrente{Titular: "Silvia", Saldo: 300}
+	contaDoGustavo := contas.ContaCorrente{Titular: "Gustavo", Saldo: 100}
+
+	status := contaDoGustavo.Tranferir(50, &contaDaSilvia)
+
+	fmt.Println(status)
+	fmt.Println(contaDaSilvia)
+	fmt.Println(contaDoGustavo)
 }
