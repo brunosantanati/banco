@@ -4,6 +4,12 @@
 
 [Código original](https://github.com/alura-cursos/go_oo)  
 
+### Comandos usados
+
+```
+go mod init github.com/brunosantanati/banco
+```
+
 ### Outra explicações
 
 #### Inicialização zero e nil  
